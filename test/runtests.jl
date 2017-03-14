@@ -1,5 +1,4 @@
 using DischargeData
 using Base.Test
 
-# write your own tests here
-@test 1 == 2
+Discharge(zeros(100),zeros(100))
