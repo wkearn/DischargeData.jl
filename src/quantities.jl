@@ -1,6 +1,7 @@
 abstract Quantity{T} <: AbstractVector{Tuple{DateTime,T}}
 
 times(q::Quantity) = q.ts
+quantity(q::Quantity) = q.q
 Base.linearindexing{T<:Quantity}(::Type{T}) = Base.LinearFast()
 
 # When you do q[range] for range::UnitRange, these return
@@ -28,8 +29,6 @@ macro quantity(name,T)
             ts::Vector{DateTime}
             q::Vector{$T}
         end
-
-        quantity(q::$name) = q.q
     end
 end
 
