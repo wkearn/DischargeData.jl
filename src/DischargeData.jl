@@ -1,6 +1,12 @@
 module DischargeData
 
-export Discharge, Stage, Calibration
+export TidalFluxQuantity,
+Discharge,
+Stage,
+CrossSectionalArea,
+Velocity,
+Calibration,
+@quantity
 
 using Base.Dates
 

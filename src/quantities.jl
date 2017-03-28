@@ -8,19 +8,33 @@ Base.linearindexing{T<:TidalFluxQuantity}(::Type{T}) = Base.LinearFast()
 Base.size(q::TidalFluxQuantity) = size(times(q))
 Base.getindex(q::TidalFluxQuantity,i::Int) = (times(q)[i],quantity(q)[i])
 
+"""
+This generates a TidalFluxQuantity type which
+conforms to the specification of the abstract
+type
 
-immutable Stage <: TidalFluxQuantity{Float64}
-    ts::Vector{DateTime}
-    h::Vector{Float64}
+Example:
+
+```
+@quantity Stage Float64
+```
+
+generates a new type Stage <: TidalFluxQuantity{Float64}
+
+which is a Real-valued time series 
+"""
+macro quantity(name,T)
+    quote
+        immutable $name <: TidalFluxQuantity{$T}
+            ts::Vector{DateTime}
+            q::Vector{$T}
+        end
+
+        DischargeData.quantity(q::$name) = q.q
+    end
 end
 
-quantity(h::Stage) = h.h
-
-immutable Discharge <: TidalFluxQuantity{Float64}
-    ts::Vector{DateTime}
-    Q::Vector{Float64}
-end
-
-quantity(q::Discharge) = q.Q
-
-Discharge(cp::Vector{Float64},Q::Vector{Float64}) = Discharge(cp,DateTime[],Float64[],Float64[],Q)
+@quantity Stage Float64
+@quantity CrossSectionalArea Float64
+@quantity Velocity Tuple{Float64,Float64,Float64}
+@quantity Discharge Float64
