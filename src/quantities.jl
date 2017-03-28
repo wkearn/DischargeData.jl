@@ -24,7 +24,7 @@ which is a Real-valued time series
 """
 macro quantity(name,T)
     quote
-        immutable $name <: TidalFluxQuantity{$T}
+        Base.@__doc__ immutable $name <: TidalFluxQuantity{$T}
             ts::Vector{DateTime}
             q::Vector{$T}
         end
@@ -33,7 +33,23 @@ macro quantity(name,T)
     end
 end
 
+"""
+A real valued time series for water levels
+"""
 @quantity Stage Float64
+
+"""
+A real valued time series for the flooded
+cross-sectional area of a channel
+"""
 @quantity CrossSectionalArea Float64
+
+"""
+An R^3 valued time series for velocity
+"""
 @quantity Velocity Tuple{Float64,Float64,Float64}
+
+"""
+An R valued time series for discharge
+"""
 @quantity Discharge Float64
