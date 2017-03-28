@@ -30,7 +30,7 @@ macro quantity(name,T)
             q::Vector{$T}
         end
 
-        DischargeData.quantity(q::$name) = q.q
+        quantity(q::$name) = q.q
     end
 end
 
