@@ -18,9 +18,9 @@ This generates a Quantity type which
 conforms to the specification of the abstract
 type
 
-Example:
+# Examples
 
-```
+```julia
 @quantity Stage Float64
 ```
 
