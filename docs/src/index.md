@@ -1,5 +1,5 @@
 # DischargeData.jl documentation
 
 ```@docs
-@quantity
+Discharge
 ```

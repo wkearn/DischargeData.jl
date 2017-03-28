@@ -2,6 +2,12 @@ module DischargeData
 
 export Discharge, Calibration
 
+"""
+    Discharge(cp,ts,vs,A,Q)
+
+A type to hold all the stuff we calculate when we 
+calculate discharge time series
+"""
 type Discharge
     cp::Vector{Float64}
     ts::Vector{DateTime}
