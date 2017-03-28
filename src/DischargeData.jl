@@ -1,6 +1,6 @@
 module DischargeData
 
-export Discharge, Calibration
+export Discharge, Stage, Calibration
 
 using Base.Dates
 
