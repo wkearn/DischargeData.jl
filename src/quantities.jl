@@ -20,7 +20,6 @@ Example:
 ```
 
 generates a new type Stage <: TidalFluxQuantity{Float64}
-
 which is a Real-valued time series 
 """
 macro quantity(name,T)
