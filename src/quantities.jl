@@ -1,15 +1,15 @@
-abstract TidalFluxQuantity{T} <: AbstractVector{Tuple{DateTime,T}}
+abstract Quantity{T} <: AbstractVector{Tuple{DateTime,T}}
 
-times(q::TidalFluxQuantity) = q.ts
-Base.linearindexing{T<:TidalFluxQuantity}(::Type{T}) = Base.LinearFast()
+times(q::Quantity) = q.ts
+Base.linearindexing{T<:Quantity}(::Type{T}) = Base.LinearFast()
 
 # When you do q[range] for range::UnitRange, these return
-# a vector, not a TidalFluxQuantity
-Base.size(q::TidalFluxQuantity) = size(times(q))
-Base.getindex(q::TidalFluxQuantity,i::Int) = (times(q)[i],quantity(q)[i])
+# a vector, not a Quantity
+Base.size(q::Quantity) = size(times(q))
+Base.getindex(q::Quantity,i::Int) = (times(q)[i],quantity(q)[i])
 
 """
-This generates a TidalFluxQuantity type which
+This generates a Quantity type which
 conforms to the specification of the abstract
 type
 
@@ -19,12 +19,12 @@ Example:
 @quantity Stage Float64
 ```
 
-generates a new type Stage <: TidalFluxQuantity{Float64}
+generates a new type Stage <: Quantity{Float64}
 which is a Real-valued time series 
 """
 macro quantity(name,T)
     quote
-        Base.@__doc__ immutable $name <: TidalFluxQuantity{$T}
+        Base.@__doc__ immutable $name <: Quantity{$T}
             ts::Vector{DateTime}
             q::Vector{$T}
         end
