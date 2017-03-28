@@ -6,6 +6,8 @@ Stage,
 CrossSectionalArea,
 Velocity,
 Calibration,
+times,
+quantity,
 @quantity
 
 using Base.Dates
