@@ -5,8 +5,8 @@ A Calibration holds two TidalFluxQuantities
 - qmeas is the measured quantity that we want to calibrate from
 """
 type Calibration
-    qtrue::TidalFluxQuantity
-    qmeas::TidalFluxQuantity
+    qtrue::Quantity
+    qmeas::Quantity
 end
 
 true_quantities(c::Calibration) = c.qtrue
