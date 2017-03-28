@@ -37,22 +37,22 @@ macro quantity(name,T)
 end
 
 """
-A real valued time series for water levels
+An ``R``-valued time series for water levels
 """
 @quantity Stage Float64
 
 """
-A real valued time series for the flooded
+An ``R``-valued time series for the flooded
 cross-sectional area of a channel
 """
 @quantity CrossSectionalArea Float64
 
 """
-An R^3 valued time series for velocity
+An ``R^3`` valued time series for velocity
 """
 @quantity Velocity Tuple{Float64,Float64,Float64}
 
 """
-An R valued time series for discharge
+An ``R``-valued time series for discharge
 """
 @quantity Discharge Float64
