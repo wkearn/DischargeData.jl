@@ -1,7 +1,11 @@
 abstract Quantity{T} <: AbstractVector{Tuple{DateTime,T}}
 
+"""Return the times at which the quantity is measured"""
 times(q::Quantity) = q.ts
+
+"""Return the values of the quantity itself"""
 quantity(q::Quantity) = q.q
+
 Base.linearindexing{T<:Quantity}(::Type{T}) = Base.LinearFast()
 
 # When you do q[range] for range::UnitRange, these return
