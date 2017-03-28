@@ -2,15 +2,9 @@ module DischargeData
 
 export Discharge, Calibration
 
-type Discharge
-    cp::Vector{Float64}
-    ts::Vector{DateTime}
-    vs::Vector{Float64}
-    A::Vector{Float64}
-    Q::Vector{Float64}
-end
+using Base.Dates
 
-Discharge(cp::Vector{Float64},Q::Vector{Float64}) = Discharge(cp,DateTime[],Float64[],Float64[],Q)
+include("quantities.jl")
 
 ##################################################
 # A light type for holding Calibration data
