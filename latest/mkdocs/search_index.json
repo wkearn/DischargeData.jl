@@ -1,0 +1,14 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "DischargeData.jl documentation\n\n\n#\n\n\nDischargeData.Discharge\n \n \nType\n.\n\n\nDischarge(cp,ts,vs,A,Q)\n\n\n\n\nA type to hold all the stuff we calculate when we  calculate discharge time series\n\n\nsource", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#dischargedatajl-documentation", 
+            "text": "#  DischargeData.Discharge     Type .  Discharge(cp,ts,vs,A,Q)  A type to hold all the stuff we calculate when we  calculate discharge time series  source", 
+            "title": "DischargeData.jl documentation"
+        }
+    ]
+}
