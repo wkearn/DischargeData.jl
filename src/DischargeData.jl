@@ -1,6 +1,6 @@
 module DischargeData
 
-export TidalFluxQuantity,
+export Quantity,
 Discharge,
 Stage,
 CrossSectionalArea,
