@@ -4,9 +4,9 @@ A Calibration holds two TidalFluxQuantities
 - qto is the 'true' quantity that we want to calibrate to
 - qfrom is the measured quantity that we want to calibrate from
 """
-type Calibration
-    qto::Quantity
-    qfrom::Quantity
+type Calibration{T<:Quantity}
+    qto::T
+    qfrom::T
 end
 
 to_quantity(c::Calibration) = c.qto
