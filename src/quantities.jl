@@ -6,6 +6,11 @@ times(q::Quantity) = q.ts
 """Return the values of the quantity itself"""
 quantity(q::Quantity) = q.q
 
+"""
+Return both of the parts of the quantity
+"""
+unzip(q::Quantity) = (times(q),quantity(q))
+
 Base.linearindexing{T<:Quantity}(::Type{T}) = Base.LinearFast()
 
 # When you do q[range] for range::UnitRange, these return

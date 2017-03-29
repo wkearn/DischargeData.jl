@@ -8,6 +8,7 @@ Velocity,
 Calibration,
 times,
 quantity,
+unzip,
 @quantity,
 to_quantity,
 from_quantity

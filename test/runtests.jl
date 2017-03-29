@@ -4,6 +4,11 @@ using Base.Test
 ht = Stage(collect(now():now()+Day(1)),randn(2))
 hh = Stage(collect(now():now()+Day(1)),randn(2))
 
+ts = times(ht)
+hs = quantity(ht)
+
+@test (ts,hs) == unzip(ht)
+
 cstage = Calibration(ht,hh)
 @test to_quantity(cstage) == ht
 @test from_quantity(cstage) == hh
