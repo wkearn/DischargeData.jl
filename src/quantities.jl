@@ -1,3 +1,13 @@
+"""
+A `Quantity` represents a time series of some quantity
+measured in a tidal channel. You might measure water 
+levels (`Stage`) or flow (`Discharge`) or whatever
+water quality parameters you might think up (not implemented).
+
+Each sample of a quantity is assumed to be drawn at a 
+real-world time, so a `Quantity` is a vector of values of the 
+quantity in some space `T` attached to a `DateTime`.
+"""
 abstract Quantity{T} <: AbstractVector{Tuple{DateTime,T}}
 
 """Return the times at which the quantity is measured"""
@@ -19,9 +29,11 @@ Base.size(q::Quantity) = size(times(q))
 Base.getindex(q::Quantity,i::Int) = (times(q)[i],quantity(q)[i])
 
 """
-This generates a Quantity type which
-conforms to the specification of the abstract
-type
+    @quantity name T
+
+This macro simplifies the process of defining
+a quantity that conforms to the abstract
+specification.
 
 # Examples
 

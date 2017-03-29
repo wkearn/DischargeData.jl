@@ -3,6 +3,7 @@
 ## Abstract Quantities
 
 ```@docs
+Quantity
 times
 quantity
 unzip
