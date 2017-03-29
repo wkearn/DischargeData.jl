@@ -9,7 +9,7 @@ type Calibration
     qfrom::Quantity
 end
 
-to_quantity(c::Calibration) = c.qtrue
-from_quantity(c::Calibration) = c.qmeas
+to_quantity(c::Calibration) = c.qto
+from_quantity(c::Calibration) = c.qfrom
 
 times(c::Calibration) = (times(to_quantity(c)),times(from_quantity(c)))

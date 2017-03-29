@@ -8,7 +8,9 @@ Velocity,
 Calibration,
 times,
 quantity,
-@quantity
+@quantity,
+to_quantity,
+from_quantity
 
 using Base.Dates
 
