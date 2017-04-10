@@ -2,13 +2,28 @@
     "docs": [
         {
             "location": "/", 
-            "text": "DischargeData.jl documentation\n\n\n#\n\n\nDischargeData.Discharge\n \n \nType\n.\n\n\nDischarge(cp,ts,vs,A,Q)\n\n\n\n\nA type to hold all the stuff we calculate when we  calculate discharge time series\n\n\nsource", 
+            "text": "DischargeData.jl documentation\n\n\n\n\nAbstract Quantities\n\n\n#\n\n\nDischargeData.Quantity\n \n \nType\n.\n\n\nA \nQuantity\n represents a time series of some quantity measured in a tidal channel. You might measure water  levels (\nStage\n) or flow (\nDischarge\n) or whatever water quality parameters you might think up (not implemented).\n\n\nEach sample of a quantity is assumed to be drawn at a  real-world time, so a \nQuantity\n is a vector of values of the  quantity in some space \nT\n attached to a \nDateTime\n.\n\n\nsource\n\n\n#\n\n\nDischargeData.times\n \n \nFunction\n.\n\n\nReturn the times at which the quantity is measured\n\n\nsource\n\n\n#\n\n\nDischargeData.quantity\n \n \nFunction\n.\n\n\nReturn the values of the quantity itself\n\n\nsource\n\n\n#\n\n\nDischargeData.unzip\n \n \nFunction\n.\n\n\nReturn both of the parts of the quantity\n\n\nsource\n\n\n#\n\n\nDischargeData.@quantity\n \n \nMacro\n.\n\n\n@quantity name T\n\n\n\n\nThis macro simplifies the process of defining a quantity that conforms to the abstract specification.\n\n\nExamples\n\n\n@quantity Stage Float64\n\n\n\n\ngenerates a new type Stage \n: Quantity{Float64} which is a Real-valued time series \n\n\nsource\n\n\n\n\nConcrete Quantities\n\n\n#\n\n\nDischargeData.Stage\n \n \nType\n.\n\n\nAn $R$-valued time series for water levels\n\n\nsource\n\n\n#\n\n\nDischargeData.CrossSectionalArea\n \n \nType\n.\n\n\nAn $R$-valued time series for the flooded cross-sectional area of a channel\n\n\nsource\n\n\n#\n\n\nDischargeData.Velocity\n \n \nType\n.\n\n\nAn $R^3$ valued time series for velocity\n\n\nsource\n\n\n#\n\n\nDischargeData.Discharge\n \n \nType\n.\n\n\nAn $R$-valued time series for discharge\n\n\nsource\n\n\n\n\nCalibrations\n\n\n#\n\n\nDischargeData.Calibration\n \n \nType\n.\n\n\nA Calibration holds two TidalFluxQuantities\n\n\n\n\nqto is the 'true' quantity that we want to calibrate to\n\n\nqfrom is the measured quantity that we want to calibrate from\n\n\n\n\nsource\n\n\n#\n\n\nDischargeData.to_quantity\n \n \nFunction\n.\n\n\nReturn the to quantity\n\n\nsource\n\n\n#\n\n\nDischargeData.from_quantity\n \n \nFunction\n.\n\n\nReturn the from quantity\n\n\nsource", 
             "title": "Home"
         }, 
         {
             "location": "/#dischargedatajl-documentation", 
-            "text": "#  DischargeData.Discharge     Type .  Discharge(cp,ts,vs,A,Q)  A type to hold all the stuff we calculate when we  calculate discharge time series  source", 
+            "text": "", 
             "title": "DischargeData.jl documentation"
+        }, 
+        {
+            "location": "/#abstract-quantities", 
+            "text": "#  DischargeData.Quantity     Type .  A  Quantity  represents a time series of some quantity measured in a tidal channel. You might measure water  levels ( Stage ) or flow ( Discharge ) or whatever water quality parameters you might think up (not implemented).  Each sample of a quantity is assumed to be drawn at a  real-world time, so a  Quantity  is a vector of values of the  quantity in some space  T  attached to a  DateTime .  source  #  DischargeData.times     Function .  Return the times at which the quantity is measured  source  #  DischargeData.quantity     Function .  Return the values of the quantity itself  source  #  DischargeData.unzip     Function .  Return both of the parts of the quantity  source  #  DischargeData.@quantity     Macro .  @quantity name T  This macro simplifies the process of defining a quantity that conforms to the abstract specification.  Examples  @quantity Stage Float64  generates a new type Stage  : Quantity{Float64} which is a Real-valued time series   source", 
+            "title": "Abstract Quantities"
+        }, 
+        {
+            "location": "/#concrete-quantities", 
+            "text": "#  DischargeData.Stage     Type .  An $R$-valued time series for water levels  source  #  DischargeData.CrossSectionalArea     Type .  An $R$-valued time series for the flooded cross-sectional area of a channel  source  #  DischargeData.Velocity     Type .  An $R^3$ valued time series for velocity  source  #  DischargeData.Discharge     Type .  An $R$-valued time series for discharge  source", 
+            "title": "Concrete Quantities"
+        }, 
+        {
+            "location": "/#calibrations", 
+            "text": "#  DischargeData.Calibration     Type .  A Calibration holds two TidalFluxQuantities   qto is the 'true' quantity that we want to calibrate to  qfrom is the measured quantity that we want to calibrate from   source  #  DischargeData.to_quantity     Function .  Return the to quantity  source  #  DischargeData.from_quantity     Function .  Return the from quantity  source", 
+            "title": "Calibrations"
         }
     ]
 }
