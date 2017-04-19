@@ -11,6 +11,7 @@ times,
 quantity,
 unzip,
 @quantity,
+@quantity_op,
 to_quantity,
 from_quantity
 

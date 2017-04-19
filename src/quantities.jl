@@ -53,6 +53,23 @@ macro quantity(name,T)
     end
 end
 
+macro quantity_op(ex)
+    ex.head == :(=) || error("Expression is not an equality")
+    output = ex.args[1]
+    expr = ex.args[2]
+    expr.head == :call || error("Expression does not call a function")
+    op = expr.args[1]
+    length(expr.args[2:end]) == 2 || error("Expressions of length > 2 quantities not yet supported")
+    args = (expr.args[2:end]...)
+    quote
+        function Base.$op(a::$(args[1]),b::$(args[2]))
+            times(a) == times(b) || error("Time series are not sampled at the same times. Consider interpolating")
+            $output(times(a),map($op, quantity(a), quantity(b)))
+        end
+    end
+end
+        
+
 """
 An ``R``-valued time series for water levels
 """
