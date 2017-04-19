@@ -70,6 +70,12 @@ An ``R^3`` valued time series for velocity
 @quantity Velocity Tuple{Float64,Float64,Float64}
 
 """
+An ``R^3`` valued time series for the velocity
+along a channel
+"""
+@quantity AlongChannelVelocity Float64    
+
+"""
 An ``R``-valued time series for discharge
 """
 @quantity Discharge Float64

@@ -27,6 +27,13 @@ cvelocity = Calibration(vt,vv)
 @test to_quantity(cvelocity) == vt
 @test from_quantity(cvelocity) == vv
 
+cvt = AlongChannelVelocity(collect(now():now()+Day(1)),randn(2))
+cvv = AlongChannelVelocity(collect(now():now()+Day(1)),randn(2))
+
+ccvelocity = Calibration(cvt,cvv)
+@test to_quantity(ccvelocity) == cvt
+@test from_quantity(ccvelocity) == cvv
+
 dd = Discharge(collect(now():now()+Day(1)),randn(2))
 dt = Discharge(collect(now():now()+Day(1)),randn(2))
 
