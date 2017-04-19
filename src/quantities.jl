@@ -96,3 +96,5 @@ along a channel
 An ``R``-valued time series for discharge
 """
 @quantity Discharge Float64
+
+@quantity_op Discharge = CrossSectionalArea * AlongChannelVelocity

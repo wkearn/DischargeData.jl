@@ -1,5 +1,3 @@
-@quantity_op Discharge = CrossSectionalArea * AlongChannelVelocity
-
 dvt = At*cvt
 @test quantity(dvt) == quantity(cvt).*quantity(At)
 
