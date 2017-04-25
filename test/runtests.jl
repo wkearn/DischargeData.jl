@@ -1,44 +1,56 @@
 using DischargeData, Base.Dates
 using Base.Test
 
-ht = Stage(collect(now():now()+Day(1)),randn(2))
-hh = Stage(collect(now():now()+Day(1)),randn(2))
+ts = collect(now():now()+Day(1))
 
-ts = times(ht)
-hs = quantity(ht)
 
-@test (ts,hs) == unzip(ht)
+@testset "Stage" begin
+    ht = Stage(ts,randn(2))
+    hh = Stage(ts,randn(2))
 
-cstage = Calibration(ht,hh)
-@test to_quantity(cstage) == ht
-@test from_quantity(cstage) == hh
+    hs = quantity(ht)
 
-At = CrossSectionalArea(ts,randn(2))
-AA = CrossSectionalArea(ts,randn(2))
+    @test (ts,hs) == unzip(ht)
 
-carea = Calibration(At,AA)
-@test to_quantity(carea) == At
-@test from_quantity(carea) ==AA
+    cstage = Calibration(ht,hh)
+    @test to_quantity(cstage) == ht
+    @test from_quantity(cstage) == hh
+end
 
-vt = Velocity(ts,[(randn(3)...);(randn(3)...)])
-vv = Velocity(ts,[(randn(3)...);(randn(3)...)])
+@testset "CrossSectionalArea" begin
+    At = CrossSectionalArea(ts,randn(2))
+    AA = CrossSectionalArea(ts,randn(2))
 
-cvelocity = Calibration(vt,vv)
-@test to_quantity(cvelocity) == vt
-@test from_quantity(cvelocity) == vv
+    carea = Calibration(At,AA)
+    @test to_quantity(carea) == At
+    @test from_quantity(carea) ==AA
+end
 
-cvt = AlongChannelVelocity(ts,randn(2))
-cvv = AlongChannelVelocity(ts,randn(2))
+@testset "Velocity" begin
+    vt = Velocity(ts,[(randn(3)...);(randn(3)...)])
+    vv = Velocity(ts,[(randn(3)...);(randn(3)...)])
 
-ccvelocity = Calibration(cvt,cvv)
-@test to_quantity(ccvelocity) == cvt
-@test from_quantity(ccvelocity) == cvv
+    cvelocity = Calibration(vt,vv)
+    @test to_quantity(cvelocity) == vt
+    @test from_quantity(cvelocity) == vv
+end
 
-dd = Discharge(ts,randn(2))
-dt = Discharge(ts,randn(2))
+@testset "AlongChannelVelocity" begin
+    cvt = AlongChannelVelocity(ts,randn(2))
+    cvv = AlongChannelVelocity(ts,randn(2))
 
-cdischarge = Calibration(dt,dd)
-@test to_quantity(cdischarge) == dt
-@test from_quantity(cdischarge) == dd
+    ccvelocity = Calibration(cvt,cvv)
+    @test to_quantity(ccvelocity) == cvt
+    @test from_quantity(ccvelocity) == cvv
+end
+
+@testset "Discharge" begin
+    dd = Discharge(ts,randn(2))
+    dt = Discharge(ts,randn(2))
+
+    cdischarge = Calibration(dt,dd)
+    @test to_quantity(cdischarge) == dt
+    @test from_quantity(cdischarge) == dd
+end
 
 include("quantity_ops.jl")
