@@ -8,6 +8,7 @@ times
 quantity
 unzip
 @quantity
+@quantity_op
 ```
 
 ## Concrete Quantities

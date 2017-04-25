@@ -53,6 +53,22 @@ macro quantity(name,T)
     end
 end
 
+"""
+    @quantity_op Quantity = Quantity (:op) Quantity
+
+This macro defines a Quantity as the output of an 
+operation on two other Quantities. The operation is
+applied by a map over the two input quantities, so
+it is possible to define any operation which makes
+sense pointwise in a time series.
+
+# Examples
+
+```julia
+@quantity_op Discharge = CrossSectionalArea * AlongChannelVelocity
+```
+
+"""
 macro quantity_op(ex)
     ex.head == :(=) || error("Expression is not an equality")
     output = ex.args[1]
