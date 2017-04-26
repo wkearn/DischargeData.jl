@@ -78,9 +78,9 @@ macro quantity_op(ex)
     length(expr.args[2:end]) == 2 || error("Expressions of length > 2 quantities not yet supported")
     args = (expr.args[2:end]...)
     quote
-        function Base.$op(a::$(args[1]),b::$(args[2]))
+        function Base.$op(a::$(esc(args[1])),b::$(esc(args[2])))
             times(a) == times(b) || error("Time series are not sampled at the same times. Consider interpolating")
-            $output(times(a),map($op, quantity(a), quantity(b)))
+            $(esc(output))(times(a),map($op, quantity(a), quantity(b)))
         end
     end
 end
