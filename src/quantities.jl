@@ -114,3 +114,8 @@ An ``R``-valued time series for discharge
 @quantity Discharge Float64
 
 @quantity_op Discharge = CrossSectionalArea * AlongChannelVelocity
+
+"""
+An ``R``-valued time series for temperature
+"""
+@quantity Temperature Float64    
