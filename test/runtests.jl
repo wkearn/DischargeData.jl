@@ -54,3 +54,4 @@ end
 end
 
 include("quantity_ops.jl")
+include("fluxes.jl")

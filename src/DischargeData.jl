@@ -13,11 +13,13 @@ unzip,
 @quantity,
 @quantity_op,
 to_quantity,
-from_quantity
+from_quantity,
+Flux
 
 using Base.Dates
 
 include("quantities.jl")
 include("calibrations.jl")
+include("fluxes.jl")
 
 end # module
