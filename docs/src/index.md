@@ -18,6 +18,8 @@ Stage
 CrossSectionalArea
 Velocity
 Discharge
+AlongChannelVelocity
+Temperature
 ```
 
 ## Calibrations
