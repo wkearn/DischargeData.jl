@@ -23,8 +23,6 @@ unzip(q::Quantity) = (times(q),quantity(q))
 
 Base.linearindexing{T<:Quantity}(::Type{T}) = Base.LinearFast()
 
-# When you do q[range] for range::UnitRange, these return
-# a vector, not a Quantity
 Base.size(q::Quantity) = size(times(q))
 Base.getindex(q::Quantity,i::Int) = (times(q)[i],quantity(q)[i])
 
