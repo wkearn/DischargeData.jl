@@ -26,6 +26,14 @@ Base.linearindexing{T<:Quantity}(::Type{T}) = Base.LinearFast()
 Base.size(q::Quantity) = size(times(q))
 Base.getindex(q::Quantity,i::Int) = (times(q)[i],quantity(q)[i])
 
+function Base.setindex!{T}(q::Quantity, v::Tuple{DateTime,T}, i::Int)
+    q.ts[i] = v[1]
+    q.q[i] = v[2]
+    v
+end
+
+Base.similar{T}(q::Quantity,::Type{T},dims::Dims) = typeof(q)(similar(times(q),dims),similar(quantity(q),dims))
+
 """
     @quantity name T
 
