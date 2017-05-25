@@ -55,3 +55,4 @@ end
 
 include("quantity_ops.jl")
 include("fluxes.jl")
+include("array_interface.jl")
