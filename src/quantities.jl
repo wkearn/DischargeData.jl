@@ -95,33 +95,33 @@ end
 """
 An ``R``-valued time series for water levels
 """
-@quantity Stage AbstractFloat
+@quantity Stage Real
 
 """
 An ``R``-valued time series for the flooded
 cross-sectional area of a channel
 """
-@quantity CrossSectionalArea AbstractFloat
+@quantity CrossSectionalArea Real
 
 """
 An ``R^3`` valued time series for velocity
 """
-@quantity Velocity Tuple{AbstractFloat,AbstractFloat,AbstractFloat}
+@quantity Velocity Tuple{Real,Real,Real}
 
 """
 An ``R^3`` valued time series for the velocity
 along a channel
 """
-@quantity AlongChannelVelocity AbstractFloat
+@quantity AlongChannelVelocity Real
 
 """
 An ``R``-valued time series for discharge
 """
-@quantity Discharge AbstractFloat
+@quantity Discharge Real
 
 @quantity_op Discharge = CrossSectionalArea * AlongChannelVelocity
 
 """
 An ``R``-valued time series for temperature
 """
-@quantity Temperature AbstractFloat
+@quantity Temperature Real
