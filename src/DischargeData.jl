@@ -21,6 +21,6 @@ using Base.Dates
 
 include("quantities.jl")
 include("calibrations.jl")
-#include("fluxes.jl")
+include("fluxes.jl")
 
 end # module
