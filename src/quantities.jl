@@ -52,7 +52,7 @@ which is a Real-valued time series
 """
 macro quantity(name,T)
     quote
-        Base.@__doc__ immutable $name{T<:$T} <: Quantity{T}
+        Base.@__doc__ struct $name{T<:$T} <: Quantity{T}
             ts::Vector{DateTime}
             q::Vector{T}
         end
