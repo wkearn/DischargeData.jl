@@ -21,6 +21,11 @@ using Base.Dates
 
 include("quantities.jl")
 include("calibrations.jl")
-include("fluxes.jl")
+if VERSION > v"0.5.0"
+    # Fluxes depend on v0.6 parametric types
+    # We're working towards supporting only v0.6
+    # so this check will be dropped very shortly
+    include("fluxes.jl")
+end
 
 end # module

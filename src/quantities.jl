@@ -52,9 +52,9 @@ which is a Real-valued time series
 """
 macro quantity(name,T)
     quote
-        Base.@__doc__ immutable $name <: Quantity{$T}
+        Base.@__doc__ immutable $name{T<:$T} <: Quantity{T}
             ts::Vector{DateTime}
-            q::Vector{$T}
+            q::Vector{T}
         end
     end
 end
@@ -95,33 +95,33 @@ end
 """
 An ``R``-valued time series for water levels
 """
-@quantity Stage Float64
+@quantity Stage AbstractFloat
 
 """
 An ``R``-valued time series for the flooded
 cross-sectional area of a channel
 """
-@quantity CrossSectionalArea Float64
+@quantity CrossSectionalArea AbstractFloat
 
 """
 An ``R^3`` valued time series for velocity
 """
-@quantity Velocity Tuple{Float64,Float64,Float64}
+@quantity Velocity Tuple{AbstractFloat,AbstractFloat,AbstractFloat}
 
 """
 An ``R^3`` valued time series for the velocity
 along a channel
 """
-@quantity AlongChannelVelocity Float64    
+@quantity AlongChannelVelocity AbstractFloat
 
 """
 An ``R``-valued time series for discharge
 """
-@quantity Discharge Float64
+@quantity Discharge AbstractFloat
 
 @quantity_op Discharge = CrossSectionalArea * AlongChannelVelocity
 
 """
 An ``R``-valued time series for temperature
 """
-@quantity Temperature Float64    
+@quantity Temperature AbstractFloat
