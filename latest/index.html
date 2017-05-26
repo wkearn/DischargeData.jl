@@ -112,19 +112,19 @@
 <strong><code>DischargeData.Quantity</code></strong> &mdash; <em>Type</em>.</p>
 <p>A <code>Quantity</code> represents a time series of some quantity measured in a tidal channel. You might measure water  levels (<code>Stage</code>) or flow (<code>Discharge</code>) or whatever water quality parameters you might think up (not implemented).</p>
 <p>Each sample of a quantity is assumed to be drawn at a  real-world time, so a <code>Quantity</code> is a vector of values of the  quantity in some space <code>T</code> attached to a <code>DateTime</code>.</p>
-<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/c3ba4783e6e04d0800957bcde7bd945045d4211f/src/quantities.jl#L1-L10' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/b0bfa08920233243198e5166f4c5d8d6ee2a8a7a/src/quantities.jl#L1-L10' class='documenter-source'>source</a><br></p>
 <p><a id='DischargeData.times' href='#DischargeData.times'>#</a>
 <strong><code>DischargeData.times</code></strong> &mdash; <em>Function</em>.</p>
 <p>Return the times at which the quantity is measured</p>
-<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/c3ba4783e6e04d0800957bcde7bd945045d4211f/src/quantities.jl#L13' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/b0bfa08920233243198e5166f4c5d8d6ee2a8a7a/src/quantities.jl#L13' class='documenter-source'>source</a><br></p>
 <p><a id='DischargeData.quantity' href='#DischargeData.quantity'>#</a>
 <strong><code>DischargeData.quantity</code></strong> &mdash; <em>Function</em>.</p>
 <p>Return the values of the quantity itself</p>
-<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/c3ba4783e6e04d0800957bcde7bd945045d4211f/src/quantities.jl#L16' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/b0bfa08920233243198e5166f4c5d8d6ee2a8a7a/src/quantities.jl#L16' class='documenter-source'>source</a><br></p>
 <p><a id='DischargeData.unzip' href='#DischargeData.unzip'>#</a>
 <strong><code>DischargeData.unzip</code></strong> &mdash; <em>Function</em>.</p>
 <p>Return both of the parts of the quantity</p>
-<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/c3ba4783e6e04d0800957bcde7bd945045d4211f/src/quantities.jl#L19-L21' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/b0bfa08920233243198e5166f4c5d8d6ee2a8a7a/src/quantities.jl#L19-L21' class='documenter-source'>source</a><br></p>
 <p><a id='DischargeData.@quantity' href='#DischargeData.@quantity'>#</a>
 <strong><code>DischargeData.@quantity</code></strong> &mdash; <em>Macro</em>.</p>
 <pre><code>@quantity name T
@@ -136,7 +136,7 @@
 </code></pre>
 
 <p>generates a new type Stage &lt;: Quantity{Float64} which is a Real-valued time series </p>
-<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/c3ba4783e6e04d0800957bcde7bd945045d4211f/src/quantities.jl#L37-L52' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/b0bfa08920233243198e5166f4c5d8d6ee2a8a7a/src/quantities.jl#L37-L52' class='documenter-source'>source</a><br></p>
 <p><a id='DischargeData.@quantity_op' href='#DischargeData.@quantity_op'>#</a>
 <strong><code>DischargeData.@quantity_op</code></strong> &mdash; <em>Macro</em>.</p>
 <pre><code>@quantity_op Quantity = Quantity (:op) Quantity
@@ -147,33 +147,33 @@
 <pre><code class="julia">@quantity_op Discharge = CrossSectionalArea * AlongChannelVelocity
 </code></pre>
 
-<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/c3ba4783e6e04d0800957bcde7bd945045d4211f/src/quantities.jl#L62-L77' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/b0bfa08920233243198e5166f4c5d8d6ee2a8a7a/src/quantities.jl#L62-L77' class='documenter-source'>source</a><br></p>
 <p><a id='Concrete-Quantities-1'></a></p>
 <h2 id="concrete-quantities">Concrete Quantities</h2>
 <p><a id='DischargeData.Stage' href='#DischargeData.Stage'>#</a>
 <strong><code>DischargeData.Stage</code></strong> &mdash; <em>Type</em>.</p>
 <p>An $R$-valued time series for water levels</p>
-<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/c3ba4783e6e04d0800957bcde7bd945045d4211f/src/quantities.jl#L95-L97' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/b0bfa08920233243198e5166f4c5d8d6ee2a8a7a/src/quantities.jl#L95-L97' class='documenter-source'>source</a><br></p>
 <p><a id='DischargeData.CrossSectionalArea' href='#DischargeData.CrossSectionalArea'>#</a>
 <strong><code>DischargeData.CrossSectionalArea</code></strong> &mdash; <em>Type</em>.</p>
 <p>An $R$-valued time series for the flooded cross-sectional area of a channel</p>
-<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/c3ba4783e6e04d0800957bcde7bd945045d4211f/src/quantities.jl#L100-L103' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/b0bfa08920233243198e5166f4c5d8d6ee2a8a7a/src/quantities.jl#L100-L103' class='documenter-source'>source</a><br></p>
 <p><a id='DischargeData.Velocity' href='#DischargeData.Velocity'>#</a>
 <strong><code>DischargeData.Velocity</code></strong> &mdash; <em>Type</em>.</p>
 <p>An $R^3$ valued time series for velocity</p>
-<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/c3ba4783e6e04d0800957bcde7bd945045d4211f/src/quantities.jl#L106-L108' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/b0bfa08920233243198e5166f4c5d8d6ee2a8a7a/src/quantities.jl#L106-L108' class='documenter-source'>source</a><br></p>
 <p><a id='DischargeData.Discharge' href='#DischargeData.Discharge'>#</a>
 <strong><code>DischargeData.Discharge</code></strong> &mdash; <em>Type</em>.</p>
 <p>An $R$-valued time series for discharge</p>
-<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/c3ba4783e6e04d0800957bcde7bd945045d4211f/src/quantities.jl#L117-L119' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/b0bfa08920233243198e5166f4c5d8d6ee2a8a7a/src/quantities.jl#L117-L119' class='documenter-source'>source</a><br></p>
 <p><a id='DischargeData.AlongChannelVelocity' href='#DischargeData.AlongChannelVelocity'>#</a>
 <strong><code>DischargeData.AlongChannelVelocity</code></strong> &mdash; <em>Type</em>.</p>
 <p>An $R^3$ valued time series for the velocity along a channel</p>
-<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/c3ba4783e6e04d0800957bcde7bd945045d4211f/src/quantities.jl#L111-L114' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/b0bfa08920233243198e5166f4c5d8d6ee2a8a7a/src/quantities.jl#L111-L114' class='documenter-source'>source</a><br></p>
 <p><a id='DischargeData.Temperature' href='#DischargeData.Temperature'>#</a>
 <strong><code>DischargeData.Temperature</code></strong> &mdash; <em>Type</em>.</p>
 <p>An $R$-valued time series for temperature</p>
-<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/c3ba4783e6e04d0800957bcde7bd945045d4211f/src/quantities.jl#L124-L126' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/b0bfa08920233243198e5166f4c5d8d6ee2a8a7a/src/quantities.jl#L124-L126' class='documenter-source'>source</a><br></p>
 <p><a id='Calibrations-1'></a></p>
 <h2 id="calibrations">Calibrations</h2>
 <p><a id='DischargeData.Calibration' href='#DischargeData.Calibration'>#</a>
@@ -183,15 +183,15 @@
 <li>qto is the 'true' quantity that we want to calibrate to</li>
 <li>qfrom is the measured quantity that we want to calibrate from</li>
 </ul>
-<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/c3ba4783e6e04d0800957bcde7bd945045d4211f/src/calibrations.jl#L1-L6' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/b0bfa08920233243198e5166f4c5d8d6ee2a8a7a/src/calibrations.jl#L1-L6' class='documenter-source'>source</a><br></p>
 <p><a id='DischargeData.to_quantity' href='#DischargeData.to_quantity'>#</a>
 <strong><code>DischargeData.to_quantity</code></strong> &mdash; <em>Function</em>.</p>
 <p>Return the to quantity</p>
-<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/c3ba4783e6e04d0800957bcde7bd945045d4211f/src/calibrations.jl#L12' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/b0bfa08920233243198e5166f4c5d8d6ee2a8a7a/src/calibrations.jl#L12' class='documenter-source'>source</a><br></p>
 <p><a id='DischargeData.from_quantity' href='#DischargeData.from_quantity'>#</a>
 <strong><code>DischargeData.from_quantity</code></strong> &mdash; <em>Function</em>.</p>
 <p>Return the from quantity</p>
-<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/c3ba4783e6e04d0800957bcde7bd945045d4211f/src/calibrations.jl#L15' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/wkearn/DischargeData.jl/tree/b0bfa08920233243198e5166f4c5d8d6ee2a8a7a/src/calibrations.jl#L15' class='documenter-source'>source</a><br></p>
               
             </div>
           </div>
@@ -233,5 +233,5 @@
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-05-26 13:49:21
+Build Date UTC : 2017-05-26 14:06:59
 -->
