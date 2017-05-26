@@ -21,7 +21,7 @@ Return both of the parts of the quantity
 """
 unzip(q::Quantity) = (times(q),quantity(q))
 
-Base.linearindexing{T<:Quantity}(::Type{T}) = Base.LinearFast()
+Base.IndexStyle{T<:Quantity}(::Type{T}) = IndexLinear()
 
 Base.size(q::Quantity) = size(times(q))
 Base.getindex(q::Quantity,i::Int) = (times(q)[i],quantity(q)[i])
