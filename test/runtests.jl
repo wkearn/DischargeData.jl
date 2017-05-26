@@ -55,8 +55,5 @@ end
 
 include("quantity_ops.jl")
 include("measurements.jl")
-if VERSION > v"0.6.0-"
-    # See note in DischargeData.jl
-    include("fluxes.jl")
-end
+include("fluxes.jl")
 include("array_interface.jl")
