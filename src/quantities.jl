@@ -8,7 +8,7 @@ Each sample of a quantity is assumed to be drawn at a
 real-world time, so a `Quantity` is a vector of values of the 
 quantity in some space `T` attached to a `DateTime`.
 """
-abstract Quantity{T} <: AbstractVector{Tuple{DateTime,T}}
+abstract type Quantity{T} <: AbstractVector{Tuple{DateTime,T}} end
 
 """Return the times at which the quantity is measured"""
 times(q::Quantity) = q.ts
