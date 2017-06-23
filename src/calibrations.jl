@@ -16,3 +16,11 @@ to_quantity(c::Calibration) = c.qto
 from_quantity(c::Calibration) = c.qfrom
 
 times(c::Calibration) = (times(to_quantity(c)),times(from_quantity(c)))
+
+Base.size(c::Calibration) = (length(to_quantity(c)),length(from_quantity(c)))
+
+function Base.vcat{T,F}(cs::Calibration{T,F}...)    
+    qto = vcat(T[to_quantity(c) for c in cs]...)
+    qfrom = vcat(F[from_quantity(c) for c in cs]...)
+    Calibration(qto,qfrom)
+end
