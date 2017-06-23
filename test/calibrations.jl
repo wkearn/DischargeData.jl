@@ -8,6 +8,5 @@
     c2 = Calibration(h3,h4)
     c = vcat(c1,c2)
     @test typeof(c)==Calibration{Stage{Float64},Stage{Float64}}
-    @test length(to_quantity(c)) == 4
-    @test length(from_quantity(c)) == 4
+    @test size(c) == (4,4)
 end
