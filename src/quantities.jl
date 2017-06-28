@@ -125,3 +125,8 @@ An ``R``-valued time series for discharge
 An ``R``-valued time series for temperature
 """
 @quantity Temperature Real
+
+"""
+An ``R``-valued time series for total suspended solids
+"""
+@quantity TSS Real
