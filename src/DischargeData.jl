@@ -1,4 +1,4 @@
-module DischargeData
+module TidalFluxQuantities
 
 export Quantity,
     Discharge,

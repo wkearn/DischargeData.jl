@@ -1,5 +1,5 @@
-site_name:        DischargeData.jl
-repo_url:         https://github.com/wkearn/DischargeData.jl
+site_name:        TidalFluxQuantities.jl
+repo_url:         https://github.com/wkearn/TidalFluxQuantities.jl
 site_description: Generic types to encapsulate time series data from tidal channels
 site_author:      Will Kearney
 

@@ -1,4 +1,4 @@
-# DischargeData.jl documentation
+# TidalFluxQuantities.jl documentation
 
 ## Abstract Quantities
 

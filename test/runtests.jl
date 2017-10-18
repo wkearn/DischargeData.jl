@@ -1,4 +1,4 @@
-using DischargeData, Base.Dates
+using TidalFluxQuantities, Base.Dates
 using Base.Test
 
 ts = collect(now():now()+Day(1))
