@@ -22,5 +22,6 @@ using Base.Dates
 
 include("quantities.jl")
 include("fluxes.jl")
+include("filtering.jl")
 
 end # module
