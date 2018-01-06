@@ -130,3 +130,8 @@ An ``R``-valued time series for temperature
 An ``R``-valued time series for total suspended solids
 """
 @quantity TSS Real
+
+"""
+A ``Bool`-valued time series used to indicate valid (true) and invalid (false) data point
+"""
+@quantity Mask Bool
