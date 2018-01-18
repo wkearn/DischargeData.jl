@@ -1,17 +1,17 @@
 """
 # A flux of a scalar quantity is itself a quantity
 # """
-type Flux{S<:Real,T<:Quantity{S}} <: Quantity{S}
+type Flux{S<:Real} <: Quantity{S}
     ts::Vector{DateTime}
     q::Vector{S}
 end
 
-function Base.:*{S<:Real,T<:Quantity{S}}(a::T,b::Discharge)
+function Base.:*{T<:Quantity}(a::T,b::Discharge)
     times(a) == times(b) || error("Time series are not sampled at the same times. Consider interpolating")
-    Flux{S,T}(times(a),quantity(a).*quantity(b))
+    Flux(times(a),quantity(a).*quantity(b))
 end
 
-function Base.:*{S<:Real,T<:Quantity{S}}(a::Discharge,b::T)
+function Base.:*{T<:Quantity}(a::Discharge,b::T)
     times(a) == times(b) || error("Time series are not sampled at the same times. Consider interpolating")
-    Flux{S,T}(times(a),quantity(a).*quantity(b))
+    Flux(times(a),quantity(a).*quantity(b))
 end
